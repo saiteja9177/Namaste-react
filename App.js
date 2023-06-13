@@ -7,6 +7,7 @@ const Title = () => (
   </h1>
 );
 
+//component composition
 const HeadingComponent = () => (
     <div id="container">
     <Title/>

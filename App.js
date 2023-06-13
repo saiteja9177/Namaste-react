@@ -7,5 +7,9 @@ const jsxHeading = (
   </h1>
 );
 
+const HeadingComponent = () => {
+    return <h1>React Component</h1>
+}
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(jsxHeading);
+root.render(<HeadingComponent/>);

@@ -19,5 +19,19 @@
 - Tree shaking(remove unused code for you)
 - Diff Builds for DEV and PROD
 
+ Named exports and default exports
+
+ # React Hooks: 
+ - They are normal JS function which is given by React(utility Functions).
+
+ # UseState:
+ - SuperPowerful state Variables in react
+ - Maintains state of your component
+ - whenever state variable changes react rerenders the component
+
+ # UseEffect:
+ -
+
+
 
 

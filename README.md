@@ -33,5 +33,11 @@
  -
 
 
+ # Reconciliation algorithm (React Fiber) :
+ - Virtual DOM is representation of actual DOM
+
+ # Diff Algo:
+
+
 
 

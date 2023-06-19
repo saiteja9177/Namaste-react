@@ -63,6 +63,18 @@
  - Never Use anchor tag for linking because it will reload whole page
  - Use Link from recat-router-Dom which will help us to not to load whole page.
 
+ # React is SPA
+ - Components will be refreshed via client side routing
+
+ # 2 types Routing in web apps:
+ - client side
+ - server side
+
+ # Dynamic Routing
+
+ # Useparams:
+ to read params
+
 
 
 

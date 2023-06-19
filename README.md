@@ -59,6 +59,10 @@
  # useRouterError: 
  - To handle your Router errors in efficient way we can use this hook and show th error msg to user.
 
+ # Navigation:
+ - Never Use anchor tag for linking because it will reload whole page
+ - Use Link from recat-router-Dom which will help us to not to load whole page.
+
 
 
 

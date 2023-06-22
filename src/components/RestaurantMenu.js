@@ -1,44 +1,23 @@
-import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
-import { MENU_URL } from "../utils/constants";
+import useRestaurantMenu from "../utils/useRestaurantMenu";
 
 const RestaurantMenu = () => {
-  const [restaurantMenu, setRestaurantMenu] = useState(null);
+  const { id } = useParams();
 
-  useEffect(() => {
-    fetchMenuData();
-  }, []);
-
-  const {id} = useParams();
-  console.log(id, 13)
-  
-
-  const fetchMenuData = async () => {
-    try {
-      const response = await fetch(
-        MENU_URL+id
-      );
-      const dataJson = await response.json();
-      setRestaurantMenu(dataJson.data);
-    } catch (error) {
-      console.error("Error fetching menu data:", error);
-    }
-  };
+  const restaurantMenu = useRestaurantMenu(id);
+  console.log(restaurantMenu, 9)
 
   if (restaurantMenu === null) {
     return <Shimmer />;
   }
 
   const { name, cuisines, costForTwoMessage } =
-    restaurantMenu?.cards?.[0]?.card?.card?.info || {};
+    restaurantMenu?.cards?.[0]?.card?.card?.info;
 
-const {itemCards} = restaurantMenu?.cards?.[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.[1]?.card.card;
-
-
-
-
-console.log(itemCards)
+  const { itemCards } =
+    restaurantMenu?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card
+      ?.card;
 
   return (
     <div className="menu">
@@ -48,7 +27,9 @@ console.log(itemCards)
       </p>
       <h2>Menu</h2>
       <ul>
-        {itemCards.map((item => {return (<li key={item.card.info.id}>{item.card.info.name}</li>)}))}
+        {itemCards.map((item) => {
+          return <li key={item.card.info.id}>{item.card.info.name}</li>;
+        })}
       </ul>
     </div>
   );

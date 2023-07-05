@@ -140,3 +140,10 @@ Commit Phase:
  # Custom Hooks:
  are like utility functions: to make our code more  modulable code
  Single responsibility rule:
+
+//chunking
+//code spliting
+//lazy loading
+//on demand loading
+//Dynamic bundling
+//dynamic import

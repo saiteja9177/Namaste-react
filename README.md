@@ -141,9 +141,30 @@ Commit Phase:
  are like utility functions: to make our code more  modulable code
  Single responsibility rule:
 
+ # AppLayout:
+ <!-- 
+ AppLayout=>
+     user(state variable)
+       => <Body user={user}/> (pass it as props)
+            => <Restaurant Card user={user}/> (use it in restaurant card since Body is parent for it we need to pass it from Body component).
+
+            PROPS DRILLING (this concept)
+  -->
+
 //chunking
 //code spliting
 //lazy loading
 //on demand loading
 //Dynamic bundling
 //dynamic import
+
+
+# Lifting the stateUP:
+
+# React Context:
+Central stage for data sharing
+
+- createContext
+- useContext
+
+- ClassComponents (.consumer, .provider)
